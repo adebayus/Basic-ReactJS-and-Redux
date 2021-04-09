@@ -1,4 +1,4 @@
-import { DELETE_RESULT,STORE_RESULT} from '../action'
+import * as actionTypes from '../action/actionTypes'
 
 
 const initialState = { 
@@ -9,7 +9,7 @@ const reducer =  ( state = initialState, action) => {
     
     switch (action.type) {
 
-		case STORE_RESULT:
+		case actionTypes.STORE_RESULT:
 			return {
 				...state,
 				results: state.results.concat({
@@ -17,7 +17,7 @@ const reducer =  ( state = initialState, action) => {
 					value: action.counter,
 				}),
 			};
-		case DELETE_RESULT:
+		case actionTypes.DELETE_RESULT:
 			// const id = 2;
             // const cloneResults = [...state.results]
             // cloneResults.splice(id,1)
